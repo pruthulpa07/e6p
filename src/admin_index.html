@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ERPv1</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="bootstrap.js"></script>
+	<script type="text/javascript" src="popper.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<link rel="stylesheet" type="text/css" href="bootstrap-datepicker.css">
+	<script type="text/javascript" src="bootstrap-datepicker.js"></script>
+	
+	<style type="text/css">
+		#splash {
+			position:absolute;
+			top:0;
+			left:0;
+			bottom:0;
+			width:100%;
+			background-color:white;
+			z-index: 200;
+			overflow: hidden;
+		}
+		#splash img {
+			width: 100vw;
+			height: 100vh;
+		}
+		div{
+			overflow: hidden;
+		}
+		</style><script type="text/javascript">  
+		$(function(){
+		   setTimeout(function() {
+			  $('#splash').fadeOut(500);
+		   }, 1000);
+		});
+		</script>
+</head>
+<body>
+		<div id="splash"><center><img src="SomeImage.jpg" /></center></div>
+	
+	<div class="container-fluid" id="bodyDiv">
+		<nav>
+			<a class="navbarbrand"href="#"><img src="logo.png"></a>
+			<hr>
+		</nav><br>
+		<div id="functionSelectorDiv" class="form-group">
+				<label for="functionSelect">Function: </label>
+				<select name="functionSelect" id="functionSelect" class="form-control">
+					<option value="" selected disabled>What should I do?</option>
+					<option value="addentry">Add Entry</option>
+					<option value="searchentry">Search and Modify</option>
+				</select>
+			</div>
+			<hr style="border:solid 1px lightgray;height:1px;background-color: lightgray">
+		<div id="container">
+				 
+		</div>
+	</div>
+	<div id="holder" style="width:100%"></div>
+</body>
+<script>
+	const electron = require('electron');
+	const ipc = electron.ipcRenderer;
+	var clickedRow;
+	$(document).ready(function(){
+		$('#functionSelectorDiv').hide();
+		$('#container').load("login.html",()=>{
+			$.getScript("login.js");
+			$('.input1').bind("keydown", function(e) {
+
+				var n = $(".input1").length;
+				if (e.which == 13)
+				{ //Enter key
+				console.log(this);
+				if(e.target.type == "button"){
+					this.click();
+				}else{
+					e.preventDefault(); //Skip default behavior of the enter key
+					var nextIndex = $('.input1').index(this) + 1;
+					if(nextIndex < n)
+						$('.input1')[nextIndex].focus();
+					else
+					{
+						$('.input1')[nextIndex-1].blur();
+						
+					}
+				}}
+				});
+		});
+		
+
+
+		// $('#functionSelect').val = "";
+		$('#functionSelect').on('change',function(){
+    // alert('value changed');
+    if($('#functionSelect').val() == 'addentry'){
+		$('#container').css("display","none");
+        $('#container').load("create_table.html",function(){
+			$('.dates input').datepicker({
+			'format':'dd-mm-yyyy',
+			'autoclose':true
+		});
+			$.getScript("create_table.js",function(){
+				$('#container').css("display","block");
+			});
+		});
+    }else if($('#functionSelect').val() == 'searchentry'){
+		
+		$('#container').load("search_table.html",function(){
+			$.getScript("search_table.js");
+		});
+    };
+    
+});
+		
+	})
+</script>
+</html>

@@ -1,0 +1,74 @@
+html,body {
+	width: 100%;
+}
+
+.navbarbrand img {
+	max-width: 6%;
+	margin: 0 1%;
+}
+nav{
+	padding: 0;
+	text-align: center;
+	height: 8vh;
+	/* z-index: 500; */
+}
+
+.container-fluid{
+	height: 100vh;
+	overflow-y:auto;
+	-ms-overflow-y:auto;
+	overflow-x:hidden;
+	-ms-overflow-x:hidden;
+	/*background: skyblue;*/
+}
+
+#container{
+	/*background: yellow;*/
+	position: relative;
+	/* top: 30%;
+	transform: translateY(-40%);
+	text-align: center;
+	overflow: inherit; */
+}
+
+h1.communicate{
+	font-family: georgia;
+	text-align: center;
+	font-size: 5em;
+}
+
+h1.communicate2{
+	font-family: georgia;
+	text-align: center;
+	font-size: 2em;
+}
+h5.communicate{
+	text-align: center;
+	font-size: 1.5em;
+	color: #a4a4a5;
+}
+
+button.communicate{
+	margin:2%;
+	border: 0;
+	padding: 5px 20px;
+}
+
+select.communicate{
+	margin:2%;
+	border: 1px solid;
+	padding: 5px 20px;
+}
+table {
+	display: block;
+	width: 100%;
+}
+.inline {
+	padding: 1%;
+	display: inline-block;
+}
+
+#col_type_table {
+	/*text-align: center;*/
+}
+

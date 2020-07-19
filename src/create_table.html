@@ -1,0 +1,145 @@
+<div id="masterSelectorDiv" class="form-group">
+    <label for="masterSelect">Category: </label>
+    <select name="masterSelect" id="masterSelect" class="form-control">
+        <option value="" selected disabled>Category</option>
+        <option value="inventory">Inventory</option>
+        <option value="rent">Rent</option>
+    </select>
+</div>
+
+<div id="formArea">
+    <div class="form-group" id="rentDiv">
+        <hr>
+        <div class="row">
+        <div class="col">
+                <label for="machinery">Machinery/Equipment:</label>
+                <input id="machinery" class="form-control input1" type="text">
+        </div>
+
+        <div class="col">
+                <label for="issuedto">Issued to:</label>
+                <input id="issuedto" class="form-control input1" type="text">
+        </div>
+        
+        <div class="col">
+                <label for="noofitems">Number of items:</label>
+                <input id="noofitems" class="form-control input1" type="number">
+        </div>
+        
+        <div class="col">
+                <div class="dates">
+                <label for="issuedate">Date of Issue:</label>
+                <input type="text" placeholder="dd-mm-yyyy" id="issuedate" autocomplete="off" class="form-control input1">
+                </div>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+                <div class="col">
+                <div class="dates">
+                <label for="returndate">Expected Return Date:</label>
+                <input type="text" placeholder="dd-mm-yyyy" id="returndate" autocomplete="off" class="form-control input1">
+                </div>
+                </div>   
+                <div class="col">
+                        <label for="rent">Rent:</label>
+                        <input id="rent" class="form-control input1" type="number">
+                </div> 
+                <div class="col">
+                        <label for="purpose">Purpose:</label>
+                        <input id="purpose" class="form-control input1" type="text">
+                </div> 
+                <div class="col">
+                        <label for="status">Status:</label>
+                        <select name="statusSelect" id="status2" class="form-control input1">
+                        <option value="" selected disabled>Status</option>
+                        <option value="out">out</option>
+                        <option value="returned">returned</option>
+                        </select>
+                </div> 
+        </div>
+        <br>
+        <div class="row">
+                <div class="col">
+                    <label for="damage">Damage:</label>
+                    <textarea id="damage" class="form-control input1" rows="4" cols="10"></textarea>
+                </div>
+        
+                <div class="col">
+                        <label for="email">Email of Recipient: </label>
+                        <input type="text" class="form-control input1" id="email">
+                </div>
+        </div>
+        
+        <br>
+        <button id="rentBtn" class="btn btn-primary" type="button">Add Entry</button>
+    </div>
+
+    <div class="form-group" id="inventoryDiv">
+        <hr>
+        <div class="row">
+        <div class="col">
+                <label for="machinery">Machinery/Equipment:</label>
+                <input id="machinery" class="form-control input1" type="text">
+        </div>
+        <div class="col">
+                <div class="dates">
+                <label for="datePick">Date of Purchase:</label>
+                <input type="text" placeholder="dd-mm-yyyy" id="datePick" autocomplete="off" class="form-control input1">
+                </div>
+        </div>
+        <div class="col">
+                <label for="cost">Cost in Rs:</label>
+                <input id="cost" class="form-control input1" type="number">
+        </div>
+        <div class="col">
+                <label for="place">Place of purchase:</label>
+                <input id="place" class="form-control input1" type="text">
+        </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+                <div class="col">
+                        <label for="billnumber">Bill Number:</label>
+                        <input id="billnumber" class="form-control input1" type="text">
+                </div>
+                
+                <div class="col">
+                        <label for="rent">Rent:</label>
+                        <input id="rent" class="form-control input1" type="number">
+                </div>
+                <div class="col">
+                        <label for="status">Condition:</label>
+                        <select name="statusSelect" id="status" class="form-control input1">
+                        <option value="" selected disabled>Present Condition</option>
+                        <option value="usable">usable</option>
+                        <option value="damaged">damaged</option>
+                        <option value="permanently damaged">permanently damaged</option>
+                        <option value="under repair">under repair</option>
+                        </select>
+                </div>
+        </div>
+        <br>
+        <div class="row" id="repairDiv">
+                <div class="col">
+                        <label for="placeofrepair">Place of repair:</label>
+                        <input id="placeofrepair" value="none" class="form-control input1" type="text">
+                </div>
+                
+                <div class="col">
+                        <label for="repaircost">Repair cost:</label>
+                        <input id="repaircost" value="0" class="form-control input1" type="number">
+                </div>
+                <div class="col">
+                        <div class="dates">
+                                <label for="datePick">Expected Date of Return:</label>
+                                <input type="text" value="none" placeholder="dd-mm-yyyy" id="dateReturn" autocomplete="off" class="form-control input1">
+                        </div>
+                </div>
+         </div>
+         <br>
+         <button id="invBtn" class="btn btn-primary" type="button">Add Entry</button>
+        </div>
+</div>
